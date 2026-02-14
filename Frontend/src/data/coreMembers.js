@@ -1,4 +1,4 @@
-export const coreTeam = [
+export const coreMembers = [
   {
     name: "Amit Kumar",
     role: "President",

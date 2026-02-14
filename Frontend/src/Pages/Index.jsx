@@ -18,7 +18,7 @@ const fadeUp = {
 const Hero = () => {
   return (
     <>
-      <section className="relative w-screen h-[100dvh] flex items-center justify-center bg-[#030712] overflow-hidden">
+      <section className="relative w-screen h-dvh flex items-center justify-center bg-[#030712] overflow-hidden">
 
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:40px_40px] opacity-40"></div>
 
