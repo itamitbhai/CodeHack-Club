@@ -191,7 +191,7 @@ const Blog = () => {
         <section className="py-12 px-6">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-full bg-linear-to-br from-emerald-500 to-emerald-600 flex items-center justify-center">
                 <TrendingUp className="w-5 h-5 text-white" />
               </div>
               <h2 className="text-3xl font-bold text-white">Featured Articles</h2>
