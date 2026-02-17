@@ -1,5 +1,6 @@
 import React from "react";
 import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import logo from '../assets/code-white-logo.png'
 
 const Footer = () => {
   return (
@@ -11,13 +12,21 @@ const Footer = () => {
 
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="bg-emerald-500 p-2 rounded-lg">
-                <span className="text-black font-bold">{`</>`}</span>
-              </div>
-              <h2 className="text-white text-lg font-semibold">
-                CodeClub
-              </h2>
+             <div className="flex items-center gap-1 text-white">
+            
+                      {/* Logo Image */}
+                      <img 
+                        src={logo} 
+                        alt="Logo" 
+                        className="h-6 w-6 sm:h-6 sm:w-6 md:h-6 md:w-6 object-contain"
+                      />
+            
+                      {/* Brand Name */}
+                      <h3 className="font-FFMOON text-lg sm:text-lg md:text-lg font-bold">
+                        Code<span className="text-[#097cc9]">Hack</span>
+                      </h3>
+            
+              
             </div>
 
             <p className="text-sm leading-relaxed">
