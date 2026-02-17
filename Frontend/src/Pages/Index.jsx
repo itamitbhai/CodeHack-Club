@@ -54,7 +54,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Content */}
+        {/* Content ye hai */}
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
           <div className="group relative mx-auto flex items-center justify-center rounded-full px-1 py-4 shadow-[inset_0_-8px_10px_#8fdfff1f] transition-shadow duration-500 ease-out hover:shadow-[inset_0_-5px_10px_#8fdfff3f] md:mb-60 mb-25 w-78">
             <span
