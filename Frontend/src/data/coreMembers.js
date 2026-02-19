@@ -29,5 +29,11 @@ export const coreMembers = [
     role:"event manager",
     bio:"oraganize events",
     image:"djjeoxm"
+  },
+    {
+    name:"Naman kumar",
+    role:"event manager",
+    bio:"oraganize events",
+    image:"djjeoxm"
   }
 ];
