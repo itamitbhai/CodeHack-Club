@@ -54,10 +54,23 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Content */}
-        <div className="md:mb-20 mb-30 z-10 text-center justify-center align-items-center px-6 max-w-5xl mx-auto">
-          
-          <section className="relative pt-140 min-h-screen flex flex-col items-center justify-center px-6 text-center">
+        {/* Content ye hai */}
+        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+          <div className="group relative mx-auto flex items-center justify-center rounded-full px-1 py-4 shadow-[inset_0_-8px_10px_#8fdfff1f] transition-shadow duration-500 ease-out hover:shadow-[inset_0_-5px_10px_#8fdfff3f] md:mb-60 mb-25 w-78">
+            <span
+              className={cn(
+                "animate-gradient absolute inset-0 block h-full w-full rounded-[inherit] bg-gradient-to-r from-[#ffaa40] via-[#ff0077] to-[#ffaa40] bg-[length:300%_100%] p-[2px]"
+              )}
+              style={{
+                WebkitMask:
+                  "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                WebkitMaskComposite: "destination-out",
+                mask:
+                  "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                maskComposite: "subtract",
+                WebkitClipPath: "padding-box",
+              }}
+            />
 
         {/* Badge */}
         <div className="inline-flex items-center gap-2 
