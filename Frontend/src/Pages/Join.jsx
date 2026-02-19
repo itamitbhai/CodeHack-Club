@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { User, Heart, BookOpen, Send, Code, Sparkles, Rocket, CheckCircle2 } from "lucide-react";
+import {
+  User,
+  Heart,
+  BookOpen,
+  Send,
+  Rocket,
+  CheckCircle2,
+  Sparkles,
+} from "lucide-react";
 
 const JoinUs = () => {
   const [formType, setFormType] = useState("member");
@@ -11,7 +19,7 @@ const JoinUs = () => {
     branch: "",
     year: "1st Year",
     skills: "",
-    reason: ""
+    reason: "",
   });
 
   const handleSubmit = (e) => {
@@ -24,314 +32,220 @@ const JoinUs = () => {
   };
 
   const tabs = [
-    { 
-      key: "member", 
-      label: "Member", 
+    {
+      key: "member",
+      label: "Member",
       icon: <User size={18} />,
       description: "Join our tech community",
-      color: "emerald"
     },
-    { 
-      key: "volunteer", 
-      label: "Volunteer", 
+    {
+      key: "volunteer",
+      label: "Volunteer",
       icon: <Heart size={18} />,
       description: "Help organize events",
-      color: "rose"
     },
-    { 
-      key: "mentor", 
-      label: "Mentor", 
+    {
+      key: "mentor",
+      label: "Mentor",
       icon: <BookOpen size={18} />,
       description: "Guide & teach others",
-      color: "blue"
     },
   ];
 
-  const currentTab = tabs.find(t => t.key === formType);
+  const currentTab = tabs.find((t) => t.key === formType);
 
+  /* ================= SUCCESS SCREEN ================= */
   if (submitted) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 px-6 relative overflow-hidden">
-        {/* Animated background elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-700"></div>
-        </div>
-
+      <div className="min-h-screen w-screen flex items-center justify-center bg-[#030712] px-6 pt-28">
         <motion.div
-          initial={{ opacity: 0, scale: 0.5, y: 50 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.6, type: "spring" }}
-          className="relative z-10 bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl p-12 text-center max-w-lg shadow-2xl"
+          initial={{ opacity: 0, scale: 0.7 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-10 text-center max-w-md w-full"
         >
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
-            className="w-24 h-24 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center mx-auto mb-6 shadow-lg shadow-emerald-500/50"
-          >
-            <CheckCircle2 className="w-12 h-12 text-white" />
-          </motion.div>
+          <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-emerald-500 flex items-center justify-center">
+            <CheckCircle2 className="text-white w-10 h-10" />
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-          >
-            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-white to-emerald-200 bg-clip-text text-transparent">
-              Welcome Aboard! 🎉
-            </h2>
-            <p className="text-gray-300 text-lg mb-2">
-              Thanks for applying as a{" "}
-              <span className="text-emerald-400 font-bold">{formType}</span>.
-            </p>
-            <p className="text-gray-400">
-              We've received your application and will review it soon.
-              Check your email for updates!
-            </p>
-          </motion.div>
+          <h2 className="text-3xl font-bold text-white mb-3">
+            Application Submitted 🎉
+          </h2>
+          <p className="text-gray-400 mb-6">
+            Thanks for applying as a{" "}
+            <span className="text-emerald-400 font-semibold">
+              {formType}
+            </span>
+            . We'll contact you soon.
+          </p>
 
-          <motion.button
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.7 }}
+          <button
             onClick={() => setSubmitted(false)}
-            className="mt-8 px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/30 rounded-xl text-white font-medium transition-all duration-300"
+            className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl transition"
           >
-            Submit Another Application
-          </motion.button>
+            Apply Again
+          </button>
         </motion.div>
       </div>
     );
   }
 
-  return (
-    <section className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-20 px-6 relative overflow-hidden w-screen">
-      {/* Animated background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse delay-500"></div>
-      </div>
+  /* ================= MAIN FORM ================= */
 
-      <div className="max-w-5xl mx-auto relative z-10">
-        {/* Header Section */}
+  return (
+    <section className="min-h-screen w-screen bg-[#030712] pt-28 pb-20 px-6 relative overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute top-20 left-1/4 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-10 right-1/4 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
+
+      <div className="max-w-4xl mx-auto relative z-10">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
           <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 rounded-full px-4 py-2 mb-6">
             <Sparkles className="w-4 h-4 text-emerald-400" />
-            <span className="text-emerald-400 text-sm font-medium">Applications Open</span>
+            <span className="text-emerald-400 text-sm font-medium">
+              Applications Open
+            </span>
           </div>
-          
-          <h1 className="text-6xl md:text-7xl font-black mb-6 tracking-tight">
-            <span className="bg-gradient-to-r from-white via-emerald-200 to-white bg-clip-text text-transparent">
-              Join Our
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-emerald-400 via-emerald-300 to-emerald-400 bg-clip-text text-transparent">
-              Coding Club
-            </span>
-          </h1>
-          
-          <p className="text-gray-400 text-xl max-w-2xl mx-auto">
-            Build amazing projects, collaborate with peers, and level up your coding skills together.
-          </p>
 
-          {/* Stats */}
-          <div className="flex justify-center gap-8 mt-10">
-            {[
-              { label: "Members", value: "500+" },
-              { label: "Projects", value: "150+" },
-              { label: "Events", value: "50+" }
-            ].map((stat, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.3 + i * 0.1 }}
-                className="text-center"
-              >
-                <div className="text-3xl font-bold text-emerald-400">{stat.value}</div>
-                <div className="text-sm text-gray-500">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
+            Join Our <span className="text-emerald-400">Coding Club</span>
+          </h1>
+
+          <p className="text-gray-400 max-w-xl mx-auto">
+            Build projects, collaborate with developers, and grow your coding
+            journey with us.
+          </p>
         </motion.div>
 
         {/* Tabs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="flex flex-wrap justify-center gap-4 mb-12"
-        >
+        <div className="flex justify-center gap-4 mb-10 flex-wrap">
           {tabs.map((tab) => (
-            <motion.button
+            <button
               key={tab.key}
               onClick={() => setFormType(tab.key)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className={`relative group px-8 py-4 rounded-2xl font-semibold transition-all duration-300 overflow-hidden
+              className={`px-6 py-3 rounded-xl transition-all duration-300 text-sm font-medium
               ${
                 formType === tab.key
-                  ? "bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-lg shadow-emerald-500/50"
-                  : "bg-white/5 text-gray-300 hover:bg-white/10 border border-white/10"
+                  ? "bg-emerald-600 text-white"
+                  : "bg-white/5 text-gray-400 hover:bg-white/10"
               }`}
             >
-              <div className="relative z-10 flex items-center gap-3">
+              <div className="flex items-center gap-2">
                 {tab.icon}
-                <div className="text-left">
-                  <div className="text-sm font-bold">{tab.label}</div>
-                  <div className={`text-xs ${formType === tab.key ? "text-emerald-100" : "text-gray-500"}`}>
-                    {tab.description}
-                  </div>
-                </div>
+                {tab.label}
               </div>
-            </motion.button>
+            </button>
           ))}
-        </motion.div>
+        </div>
 
-        {/* Form Card */}
+        {/* Form */}
         <AnimatePresence mode="wait">
           <motion.form
             key={formType}
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -40 }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
             onSubmit={handleSubmit}
-            className="bg-white/5 backdrop-blur-2xl border border-white/20 rounded-3xl p-10 md:p-12 shadow-2xl space-y-6"
+            className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-10 space-y-6"
           >
-            {/* Form Header */}
-            <div className="flex items-center gap-3 mb-8 pb-6 border-b border-white/10">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center">
-                {currentTab.icon}
-              </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              <InputField
+                label="Full Name *"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+              />
+              <InputField
+                label="Email Address *"
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <InputField
+                label="Branch *"
+                name="branch"
+                value={formData.branch}
+                onChange={handleChange}
+              />
+
               <div>
-                <h3 className="text-2xl font-bold text-white">
-                  Apply as {currentTab.label}
-                </h3>
-                <p className="text-gray-400 text-sm">{currentTab.description}</p>
-              </div>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-300">Full Name *</label>
-                <input
-                  required
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Enter your name"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
-                />
-              </div>
-              
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-300">Email Address *</label>
-                <input
-                  required
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="your.email@example.com"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
-                />
-              </div>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-300">Branch *</label>
-                <input
-                  required
-                  type="text"
-                  name="branch"
-                  value={formData.branch}
-                  onChange={handleChange}
-                  placeholder="e.g. Computer Science"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
-                />
-              </div>
-              
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-300">Year *</label>
+                <label className="text-sm text-gray-300">Year *</label>
                 <select
                   name="year"
                   value={formData.year}
                   onChange={handleChange}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
+                  className="w-full mt-2 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:ring-2 focus:ring-emerald-500 outline-none"
                 >
-                  <option value="1st Year" className="bg-slate-800">1st Year</option>
-                  <option value="2nd Year" className="bg-slate-800">2nd Year</option>
-                  <option value="3rd Year" className="bg-slate-800">3rd Year</option>
-                  <option value="4th Year" className="bg-slate-800">4th Year</option>
+                  <option className="bg-[#030712]">1st Year</option>
+                  <option className="bg-[#030712]">2nd Year</option>
+                  <option className="bg-[#030712]">3rd Year</option>
+                  <option className="bg-[#030712]">4th Year</option>
                 </select>
               </div>
             </div>
 
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-gray-300">Skills & Technologies</label>
-              <input
-                type="text"
-                name="skills"
-                value={formData.skills}
-                onChange={handleChange}
-                placeholder="e.g. React, Python, UI/UX, Machine Learning"
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
-              />
-            </div>
+            <InputField
+              label="Skills"
+              name="skills"
+              value={formData.skills}
+              onChange={handleChange}
+            />
 
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-gray-300">
-                Why do you want to {formType === "mentor" ? "mentor" : formType === "volunteer" ? "volunteer" : "join"}? *
+            <div>
+              <label className="text-sm text-gray-300">
+                Why do you want to join? *
               </label>
               <textarea
                 required
-                rows={5}
+                rows={4}
                 name="reason"
                 value={formData.reason}
                 onChange={handleChange}
-                placeholder={`Tell us what motivates you to ${
-                  formType === "mentor"
-                    ? "share your knowledge and mentor others"
-                    : formType === "volunteer"
-                    ? "volunteer and help organize events"
-                    : "become part of our coding community"
-                }...`}
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300 resize-none"
+                className="w-full mt-2 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:ring-2 focus:ring-emerald-500 outline-none resize-none"
               />
             </div>
 
             <motion.button
-              type="submit"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full flex items-center justify-center gap-3
-              bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700
-              text-white font-bold py-4 rounded-xl transition-all duration-300
-              shadow-lg shadow-emerald-500/50 hover:shadow-emerald-500/70 group"
+              type="submit"
+              className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-4 rounded-xl font-semibold flex items-center justify-center gap-2 transition"
             >
-              <Rocket size={20} className="group-hover:translate-x-1 transition-transform" />
+              <Rocket size={18} />
               Submit Application
-              <Send size={18} className="group-hover:translate-x-1 transition-transform" />
+              <Send size={16} />
             </motion.button>
-
-            <p className="text-center text-gray-500 text-sm">
-              By submitting, you agree to our community guidelines and code of conduct.
-            </p>
           </motion.form>
         </AnimatePresence>
       </div>
     </section>
   );
 };
+
+/* Reusable Input Component */
+const InputField = ({ label, name, value, onChange, type = "text" }) => (
+  <div>
+    <label className="text-sm text-gray-300">{label}</label>
+    <input
+      required
+      type={type}
+      name={name}
+      value={value}
+      onChange={onChange}
+      className="w-full mt-2 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:ring-2 focus:ring-emerald-500 outline-none"
+    />
+  </div>
+);
 
 export default JoinUs;

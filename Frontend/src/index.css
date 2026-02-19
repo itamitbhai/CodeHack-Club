@@ -40,6 +40,10 @@ html, body {
   border-radius: 8px;
   font-size: 15px;
 }
+body {
+  cursor: none;
+}
+
 
 /* For Chrome – dropdown box styling */
 select.premium-select {

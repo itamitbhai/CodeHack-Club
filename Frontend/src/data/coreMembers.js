@@ -1,3 +1,5 @@
+import TECH from "../assets/Tech-Head.jpg.jpeg"
+
 export const coreMembers = [
   {
     name: "Amit Kumar",
@@ -7,9 +9,9 @@ export const coreMembers = [
   },
   {
     name: "Suraj Kumar",
-    role: "Vice President",
+    role: "TECH HEAD",
     bio: "Managing operations and community growth.",
-    image: "/images/team2.jpg",
+    image: TECH,
   },
   {
     name: "Ananya Gupta",
