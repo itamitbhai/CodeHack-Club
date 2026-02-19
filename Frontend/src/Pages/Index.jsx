@@ -55,49 +55,45 @@ const Hero = () => {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-          <div className="group relative mx-auto flex items-center justify-center rounded-full px-1 py-4 shadow-[inset_0_-8px_10px_#8fdfff1f] transition-shadow duration-500 ease-out hover:shadow-[inset_0_-5px_10px_#8fdfff3f] md:mb-60 mb-25 w-78">
-            <span
-              className={cn(
-                "animate-gradient absolute inset-0 block h-full w-full rounded-[inherit] bg-gradient-to-r from-[#ffaa40] via-[#ff0077] to-[#ffaa40] bg-[length:300%_100%] p-[2px]"
-              )}
-              style={{
-                WebkitMask:
-                  "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-                WebkitMaskComposite: "destination-out",
-                mask:
-                  "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-                maskComposite: "subtract",
-                WebkitClipPath: "padding-box",
-              }}
-            />
+        <div className="md:mb-20 mb-30 z-10 text-center justify-center align-items-center px-6 max-w-5xl mx-auto">
+          
+          <section className="relative pt-140 min-h-screen flex flex-col items-center justify-center px-6 text-center">
 
-            🎉
-            <hr className="fixed mx-2 h-4 w-px shrink-0 bg-neutral-700" />
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 
+          bg-blue-600/10 border border-blue-500/40 
+          rounded-full px-4 py-2 mb-6">
+          <Zap className="w-4 h-4 text-blue-600" />
+          <span className="text-blue-600 text-sm font-medium">
+            CodeHack Coding Club
+          </span>
+        </div>
 
-            <AnimatedGradientText className="text-xl font-medium font-mono">
-              CodeHack Coding Club
-            </AnimatedGradientText>
+        {/* Heading */}
+        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl 
+          font-FFMOON tracking-tight 
+          text-gray-200 leading-tight">
+          Build <span className="text-blue-600">Code</span> Debug
+        </h1>
 
-            <ChevronRight className="ml-3 size-4 stroke-neutral-700 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+</section>
+          
+          <div className="flex flex-col gap-8 mb-100">
+          <div className="">
+            <TypingAnimation
+              duration={180}
+              className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-mono text-center"
+            >
+              We are a community of passionate developers building the future
+              through code, collaboration, and creativity.
+            </TypingAnimation>
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-FFMOON tracking-tight mb-20 text-gray-200">
-            Build <span className="text-blue-600">Code </span> Debug
-          </h1>
-
-          <TypingAnimation
-            duration={180}
-            className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-mono text-center"
-          >
-            We are a community of passionate developers building the future
-            through code, collaboration, and creativity.
-          </TypingAnimation>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-20">
-            <Link
+          <div className="flex items-center justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-20">
+            <Link 
               to="/join"
-              className="px-8 py-4 text-red-600 bg-black border border-blue-600 font-semibold rounded-xl flex items-center gap-2 justify-center shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 hover:scale-105 transition-all duration-300 font-mono"
+              className="px-8 py- h-14 w-60  text-red-600 bg-black border border-blue-600 font-semibold rounded-xl flex items-center gap-2 justify-center shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 hover:scale-105 transition-all duration-300 font-mono"
             >
               Join the Club
               <ArrowRight className="w-4 h-4 text-red-600" />
@@ -105,11 +101,13 @@ const Hero = () => {
 
             <Link
               to="/events"
-              className="px-8 py-4 bg-black text-gray-200 font-semibold rounded-xl flex items-center gap-2 justify-center border border-gray-700 hover:border-blue-600 transition-all duration-300 font-mono"
+              className="px-8 py-4 h-14 w-60 bg-black text-gray-200 font-semibold rounded-xl flex items-center gap-2 justify-center border border-gray-700 hover:border-blue-600 transition-all duration-300 font-mono"
             >
               View Events
               <Calendar className="w-4 h-4" />
             </Link>
+          </div>
+          </div>
           </div>
         </div>
       </section>
