@@ -1,26 +1,28 @@
+import Banner1 from '../assets/image/Comingsoon.jpg';
+import Banner2 from '../assets/image/COMING SOON 2.jpg';
+import Banner3 from '../assets/image/COMING SOON 1.jpg';
+ 
+
 export const events = [
   {
-   image: "https://images.unsplash.com/photo-1729157659231-a9090b02987a?q=80&w=765&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-
-    title: "AI Bootcamp 2026",
-    date: "March 12, 2026",
-    location: "Main Auditorium",
-    description: "An intensive workshop on AI & Machine Learning fundamentals.",
+    image: Banner1,
+    title: "AI Hackathon",
+    date: "Declare Soon",
+    location: "Seminar II",
+    description: "",
   },
   {
-    image: "https://images.unsplash.com/photo-1729157659231-a9090b02987a?q=80&w=765&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-
+    image: Banner2,
     title: "HackFest 48",
-    date: "April 5–7, 2026",
-    location: "Innovation Lab",
-    description: "A 48-hour hackathon with exciting prizes and mentorship.",
+    date: "Declare Soon",
+    location: "Seminar II",
+    description: "",
   },
   {
-    image: "https://images.unsplash.com/photo-1729157659231-a9090b02987a?q=80&w=765&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-
-    title: "Web3 & Blockchain Talk",
-    date: "May 18, 2026",
-    location: "Seminar Hall B",
-    description: "Industry experts discussing the future of decentralized tech.",
+    image: Banner3,
+    title: "Teck-Talk",
+    date: "Declare Soon",
+    location: "Seminar II",
+    description: "",
   },
 ];

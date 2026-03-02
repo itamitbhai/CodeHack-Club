@@ -1,6 +1,6 @@
 import React from "react";
 import { Github, Linkedin, Twitter, Mail } from "lucide-react";
-import logo from '../assets/code-white-logo.png'
+import logo from '../assets/image/CodeHack_Logo_White.png'
 
 const Footer = () => {
   return (

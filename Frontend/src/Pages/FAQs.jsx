@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import faqData from "../data/FAQ"
+import faqData from "../data/FAQ";
 
 export default function FAQ() {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [showAll, setShowAll] = useState(false);
 
   const toggleFAQ = (id) => {
     setActiveIndex(activeIndex === id ? null : id);
   };
+
+  const visibleFAQs = showAll ? faqData : faqData.slice(0, 5);
 
   return (
     <div
@@ -15,12 +18,23 @@ export default function FAQ() {
       style={{ perspective: "1000px" }}
     >
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold text-center text-white mb-16">
-          Frequently Asked <span className="text-teal-400">Questions</span>
+
+        {/* Heading */}
+        <h1 className="font-FFMOON text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center pt-10 text-white mb-10 leading-tight">
+
+          <span className="block sm:hidden text-blue-600">
+            FAQ <span className="text-white">s</span>
+          </span>
+
+          <span className="hidden sm:block">
+            Frequently Asked <span className="text-blue-600">Questions</span>
+          </span>
+
         </h1>
 
+        {/* FAQ Boxes */}
         <div className="space-y-6">
-          {faqData.map((faq) => (
+          {visibleFAQs.map((faq) => (
             <motion.div
               key={faq.id}
               whileHover={{ scale: 1.02 }}
@@ -52,6 +66,19 @@ export default function FAQ() {
             </motion.div>
           ))}
         </div>
+
+        {/* View More Button */}
+        {faqData.length > 5 && (
+          <div className="text-center mt-5">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="px-8 py-3 text-black rounded-xl font-semibold transition-all duration-300 shadow-lg"
+            >
+              {showAll ? "View Less" : "View More"}
+            </button>
+          </div>
+        )}
+
       </div>
     </div>
   );

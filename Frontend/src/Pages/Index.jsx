@@ -15,6 +15,8 @@ import TeamCard from "../components/TeamCard";
 import { coreTeam } from "../data/coreTeam";
 import { Globe } from "@/components/ui/globe";
 import { TypingAnimation } from "@/components/ui/typing-animation";
+import { Particles } from "../components/ui/particles";
+
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -28,13 +30,14 @@ const fadeUp = {
 const Hero = () => {
   return (
     <>
+      {/* ================= HERO SECTION ================= */}
       <section className="relative w-full w-screen min-h-screen flex items-center justify-center bg-[#030712] overflow-hidden">
-
+        
         {/* Grid Background */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:40px_40px] opacity-40"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:40px_40px] opacity-40" />
 
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-500/10 via-transparent to-black"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-500/10 via-transparent to-black" />
 
         {/* Globe */}
         <div className="absolute inset-0 flex items-end justify-center pointer-events-none">
@@ -59,7 +62,7 @@ const Hero = () => {
           </div>
 
           {/* Heading */}
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-gray-200 leading-tight">
+          <h1 className="font-FFMOON text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-gray-200 leading-tight">
             Build <span className="text-blue-500">Code</span> Debug
           </h1>
 
@@ -96,14 +99,19 @@ const Hero = () => {
       </section>
 
       {/* ================= WHAT WE DO ================= */}
-      <section className="py-24 bg-black">
-        <div className="container mx-auto px-6">
+      <section className="relative py-24 bg-black overflow-hidden">
+        {/* Particles Background */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <Particles />
+        </div>
+
+        <div className="container relative z-10 mx-auto px-6">
           <motion.h2
             variants={fadeUp}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-center text-gray-200 mb-16"
+            className="font-FFMOON text-3xl md:text-4xl font-bold text-center text-gray-200 mb-16"
           >
             What We <span className="text-blue-500">Do</span>
           </motion.h2>
@@ -138,14 +146,18 @@ const Hero = () => {
         </div>
       </section>
 
-      {/* ================= TEAM ================= */}
-      <section className="py-24 bg-black">
+      {/* ================= CORE TEAM ================= */}
+      <section className="relative py-24 bg-black">
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <Particles />
+        </div>
+
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-200 mb-12">
+          <h2 className="font-FFMOON text-3xl md:text-4xl font-bold text-center text-gray-200 mb-12">
             Core <span className="text-blue-500">Team</span>
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
             {coreTeam.map((member, i) => (
               <TeamCard key={member.name} member={member} index={i} />
             ))}
@@ -153,10 +165,10 @@ const Hero = () => {
         </div>
       </section>
 
-      {/* ================= EVENTS ================= */}
+      {/* ================= UPCOMING EVENTS ================= */}
       <section className="py-24 bg-black">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-200 mb-16">
+          <h2 className="font-FFMOON text-3xl md:text-4xl font-bold text-center text-gray-200 mb-16">
             Upcoming <span className="text-blue-500">Events</span>
           </h2>
 

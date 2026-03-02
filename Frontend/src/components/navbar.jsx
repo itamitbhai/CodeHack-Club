@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import logo from '../assets/code-white-logo.png'
+import logo from '../assets/image/CodeHack_Logo_White.png'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
     { name: "Team", path: "/team" },
+    { name: "About", path: "/about" },
     { name: "Projects", path: "/projects" },
     { name: "FAQs", path: "/faqs" },
   ];
@@ -28,7 +28,7 @@ const Navbar = () => {
           <img 
             src={logo} 
             alt="Logo" 
-            className="h-8 w-8 sm:h-10 sm:w-10 md:h-10 md:w-10 object-contain"
+            className="h-10 w-10 sm:h-10 sm:w-10 md:h-10 md:w-10 object-contain"
           />
 
           {/* Brand Name */}
@@ -69,14 +69,14 @@ const Navbar = () => {
         {/* Mobile Toggle */}
         <div className="md:hidden text-black ">
           <button onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X size={26} /> : <Menu size={26} />}
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-[#0f2027] px-6 pb-4 flex flex-col gap-4 text-gray-300">
+        <div className="md:hidden bg-[#100f22] px-6 pb-4 flex flex-col gap-4 text-gray-300">
           {navItems.map((item) => (
             <NavLink
               key={item.name}
@@ -84,7 +84,7 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
                 `text-left transition-all duration-300 font-FFMOON mt-2  ${
-                  isActive ? "text-green-400" : "hover:text-green-400"
+                  isActive ? "text-blue-600" : "hover:text-blue-600"
                 }`
               }
             >
