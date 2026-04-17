@@ -6,7 +6,7 @@ import { coreMembers } from "../data/coreMembers";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Mousewheel } from "swiper/modules";
 import { Particles } from '../components/ui/particles';
-
+import { Meteors } from '../components/ui/meteors';
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -15,27 +15,39 @@ const TeamHero = () => {
     <div className="relative  min-h-screen w-screen bg-black overflow-hidden">
       
       {/* Particles Background */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <Particles />
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <Particles
+          className="w-full h-full"
+          quantity={window.innerWidth < 768 ? 40 : 100}
+          ease={60}
+          size={0.6}
+          staticity={40}
+        />
       </div>
 
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <Meteors />
+      </div>
+      
+
       {/* Content Wrapper */}
-      <div className="relative z-0 pt-4">
+      <div className="relative z-10 ">
+        
 
         {/* Hero */}
         <section className="text-center pt-28">
-          <h1 className="font-FFMOON text-5xl md:text-6xl font-bold text-white">
+          <h1 className="font-Gadey text-5xl md:text-6xl font-bold text-white">
             Our <span className="text-blue-600">Team</span>
           </h1>
-          <p className="mt-6 text-lg text-gray-400">
+          <p className="mt-2 font-ByteBounce text-2xl text-gray-500">
             The passionate people driving Coding Club forward.
           </p>
         </section>
 
         {/* Leadership */}
-        <section className="m-10 py-5">
-          <div className="max-w-7xl mx-auto px-6">
-            <h2 className="font-FFMOON text-3xl font-bold text-white mb-8 text-center">
+        <section className="m-5 ">
+          <div className="max-w-7xl mx-auto px-6 ">
+            <h2 className="font-FFMOON text-3xl  font-bold text-white  text-center">
               Core <span className="text-blue-600">Team</span>
             </h2>
 
@@ -67,7 +79,7 @@ const TeamHero = () => {
         </section>
 
         {/* Core Members */}
-        <section className="py-20">
+        <section className="py-10">
           <div className="max-w-7xl mx-auto px-6">
             <h2 className="font-FFMOON text-2xl font-bold mb-10 text-white text-center">
               Core <span className="text-blue-600">Members</span>

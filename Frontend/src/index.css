@@ -6,14 +6,6 @@
   @import 'swiper/css/pagination';
  @import 'swiper/css/navigation';
 
-/* @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Montez&family=Playwrite+AT:ital,wght@0,100..400;1,100..400&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
-
-.titillium-web-regular {
-  font-family: "Titillium-Web", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-} */
-
 /* ===== HIDE SCROLLBAR (Tailwind compatible) ===== */
 html, body {
   /* @apply overflow-y-scroll;  */
@@ -44,7 +36,6 @@ body {
   cursor: none;
 }
 
-
 /* For Chrome – dropdown box styling */
 select.premium-select {
   background-position: right 14px center;
@@ -71,13 +62,94 @@ select.premium-select {
   src: url("../src/assets/fonts/FFMOON.ttf"),
 }
 
-@theme {
-  --font-FFMOON: FFMOON, 'sans-serif';
+@font-face {
+  font-family: FFROBOT;
+  src: url("../src/assets/fonts/FFROBOT.ttf"),
 }
 
+@font-face {
+  font-family: Hackdaddy;
+  src: url("../src/assets/fonts/Hackdaddy.otf"),
+}
 
+@font-face {
+  font-family: Kapilar;
+  src: url("../src/assets/fonts/Kapiler.otf"),
+}
 
+@font-face {
+  font-family: Godber;
+  src: url("../src/assets/fonts/Godber.ttf"),
+}
 
+@font-face {
+  font-family: Alphacorsa;
+  src: url("../src/assets/fonts/Alphacorsa.ttf"),
+}
+
+@font-face {
+  font-family: ByteBounce;
+  src: url("../src/assets/fonts/ByteBounce.ttf"),
+}
+
+@font-face {
+  font-family: Electroharmonix;
+  src: url("../src/assets/fonts/Electroharmonix.otf"),
+}
+
+@font-face {
+  font-family: Gadey;
+  src: url("../src/assets/fonts/Gadey.ttf"),
+}
+
+@font-face {
+  font-family: Monofrik;
+  src: url("../src/assets/fonts/Monofrik"),
+}
+
+@font-face {
+  font-family: Orbitron;
+  src: url("../src/assets/fonts/Orbitron.ttf"),
+}
+
+@font-face {
+  font-family: Piersob;
+  src: url("../src/assets/fonts/Piersob.ttf"),
+}
+
+@font-face {
+  font-family: Siegra;
+  src: url("../src/assets/fonts/Siegra.ttf"),
+}
+
+@font-face {
+  font-family: Xirod;
+  src: url("../src/assets/fonts/Xirod.otf"),
+}
+
+@font-face {
+  font-family: Overcame;
+  src: url("../src/assets/fonts/Overcame.ttf"),
+}
+
+@theme {
+  --font-FFMOON: "FFMOON", sans-serif;
+  --font-FFROBOT: "FFROBOT", sans-serif;
+  --font-Hackdaddy: "Hackdaddy", sans-serif;
+  --font-Kapilar: "Kapilar", sans-serif;
+  --font-Godber: "Godber", sans-serif;
+  --font-Alphacorsa: "Alphacorsa", sans-serif;
+  --font-ByteBounce: "ByteBounce", sans-serif;
+  --font-Electroharmonix: "Electroharmonix", sans-serif;
+  --font-Gadey: "Gadey", sans-serif;
+  --font-Monofrik: "Monofrik", sans-serif;
+  --font-Orbitron: "Orbitron", sans-serif;
+  --font-Piersob: "Piersob", sans-serif;
+  --font-Siegra: "Siegra", sans-serif;
+  --font-Xirod: "Xirod", sans-serif;
+  --font-Overcame: "Overcame", sans-serif;
+
+}
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -124,6 +196,11 @@ select.premium-select {
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --color-1: oklch(66.2% 0.225 25.9);
+  --color-2: oklch(60.4% 0.26 302);
+  --color-3: oklch(69.6% 0.165 251);
+  --color-4: oklch(80.2% 0.134 225);
+  --color-5: oklch(90.7% 0.231 133);
 }
 
 a {
@@ -243,6 +320,52 @@ button:focus-visible {
   50%, 100% {
     opacity: 0;
     }
+  }
+  --animate-meteor: meteor 5s linear infinite;
+  @keyframes meteor {
+  0% {
+    transform: rotate(var(--angle)) translateX(0);
+    opacity: 1;
+    }
+  70% {
+    opacity: 1;
+    }
+  100% {
+    transform: rotate(var(--angle)) translateX(-500px);
+    opacity: 0;
+    }
+  }
+  --animate-pulse: pulse var(--duration) ease-out infinite;
+  --animate-pulse-ripple: pulse-ripple var(--duration) cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  @keyframes pulse {
+  0%, 100% {
+    boxShadow: 0 0 0 0 var(--pulse-color, oklch(from var(--bg) l c h / 0.5));
+    }
+  50% {
+    boxShadow: 0 0 0 var(--distance) var(--pulse-color, oklch(from var(--bg) l c h / 0.5));
+    }
+  }
+  @keyframes pulse-ripple {
+  0% {
+    boxShadow: 0 0 0 0 oklch(from var(--pulse-color, var(--bg)) l c h / 1);
+    }
+  100% {
+    boxShadow: 0 0 0 var(--distance) oklch(from var(--pulse-color, var(--bg)) l c h / 0);
+    }
+  }
+  --animate-rainbow: rainbow var(--speed, 2s) infinite linear;
+  --color-color-5: var(--color-5);
+  --color-color-4: var(--color-4);
+  --color-color-3: var(--color-3);
+  --color-color-2: var(--color-2);
+  --color-color-1: var(--color-1);
+  @keyframes rainbow {
+  0% {
+    background-position: 0%;
+    }
+  100% {
+    background-position: 200%;
+    }
   }}
 
 .dark {
@@ -277,6 +400,11 @@ button:focus-visible {
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --color-1: oklch(66.2% 0.225 25.9);
+  --color-2: oklch(60.4% 0.26 302);
+  --color-3: oklch(69.6% 0.165 251);
+  --color-4: oklch(80.2% 0.134 225);
+  --color-5: oklch(90.7% 0.231 133);
 }
 
 @layer base {

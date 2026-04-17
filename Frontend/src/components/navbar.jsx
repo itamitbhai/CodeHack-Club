@@ -15,7 +15,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 h-20 w-full z-50 bg-[#000000] shadow-lg">
+    <nav className="fixed top-0 left-0 h-20 w-full z-50 backdrop-blur-3xl shadow-lg">
       <div className="max-w-7xl mx-auto px-3 py-4 flex items-center justify-between">
         {/* Logo */}
         <NavLink 
@@ -32,8 +32,8 @@ const Navbar = () => {
           />
 
           {/* Brand Name */}
-          <h3 className="font-FFMOON text-xl sm:text-2xl md:text-3xl font-bold">
-            Code<span className="text-[#097cc9]">Hack</span>
+          <h3 className="font-Xirod text-xl sm:text-2xl md:text-2xl font-bold">
+            Code<span className="text-blue-600">Hack</span>
           </h3>
 
           </div>
@@ -48,7 +48,7 @@ const Navbar = () => {
               to={item.path}
               className={({ isActive }) =>
                 `relative transition-all duration-300 font-FFMOON ${
-                  isActive ? "text-green-400" : "hover:text-green-400"
+                  isActive ? "text-blue-600" : "hover:text-red-600"
                 }`
               }
             >
@@ -56,7 +56,7 @@ const Navbar = () => {
                 <>
                   {item.name}
                   <span
-                    className={`absolute left-0 -bottom-1 h-[2px] w-full bg-red-600 transition-all duration-300 ${
+                    className={`absolute left-0 -bottom-1 h-0.5 w-full bg-red-600 transition-all duration-300 ${
                       isActive ? "scale-100" : "scale-0"
                     }`}
                   ></span>
@@ -67,7 +67,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Toggle */}
-        <div className="md:hidden text-black ">
+        <div className="md:hidden text-white ">
           <button onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>

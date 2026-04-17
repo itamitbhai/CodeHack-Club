@@ -34,7 +34,7 @@ export default function CustomCursor() {
   return (
     <div
       ref={cursorRef}
-      className="fixed w-5 h-5 bg-indigo-500 rounded-full pointer-events-none z-[9999] mix-blend-difference"
+      className="fixed w-5 h-5 bg-blue-600 rounded-full rotate-45 pointer-events-none z-9999 mix-blend-difference"
     ></div>
   );
 }

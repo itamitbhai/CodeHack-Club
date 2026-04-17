@@ -34,9 +34,8 @@ const TeamCard = ({ member }) => {
       onMouseLeave={resetTilt}
       className="
         relative overflow-hidden
-        bg-white/10
         backdrop-blur-md sm:backdrop-blur-xl
-        border border-white/20
+        border border-blue-600
         rounded-2xl
         p-5 sm:p-6 m-10
         text-center
@@ -54,7 +53,7 @@ const TeamCard = ({ member }) => {
     >
       {/* Blue Blur Light */}
       <div className="
-          absolute -top-20 -left-20
+          absolute -top-10 -left-5
           w-40 h-40 sm:w-52 sm:h-52
           bg-blue-600
           rounded-full
@@ -65,7 +64,7 @@ const TeamCard = ({ member }) => {
 
       {/* Purple Blur Light */}
       <div className="
-        absolute -bottom-20 -right-10
+        absolute -bottom-20 -right-20
         w-40 h-40 sm:w-52 sm:h-52
         bg-purple-500
         rounded-full
@@ -94,21 +93,21 @@ const TeamCard = ({ member }) => {
       </div>
 
       <h3
-        className="text-base sm:text-lg font-semibold text-white mb-1 relative z-10"
+        className="text-base sm:text-lg font-Hackdaddy text-white mb-1 relative z-10"
         style={{ transform: "translateZ(25px)" }}
       >
         {member.name}
       </h3>
 
       <p
-        className="text-blue-600 text-sm font-medium mb-3 relative z-10"
+        className="text-blue-600 text-sm font-mono font-bold mb-3 relative z-10"
         style={{ transform: "translateZ(20px)" }}
       >
         {member.role}
       </p>
 
       <p
-        className="text-gray-300 text-xs leading-relaxed mb-5 relative z-10"
+        className="text-gray-300 text-xs font-light leading-relaxed mb-5 relative z-10"
         style={{ transform: "translateZ(15px)" }}
       >
         {member.bio}

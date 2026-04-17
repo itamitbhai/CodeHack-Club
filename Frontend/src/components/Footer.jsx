@@ -4,7 +4,7 @@ import logo from '../assets/image/CodeHack_Logo_White.png'
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0b1220] text-gray-400 pt-16 pb-8">
+    <footer className="bg-[#05090f] text-gray-400 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Top Grid */}
@@ -22,14 +22,14 @@ const Footer = () => {
                       />
             
                       {/* Brand Name */}
-                      <h3 className="font-FFMOON text-lg sm:text-lg md:text-lg font-bold">
+                      <h3 className="font-Xirod text-lg sm:text-lg md:text-lg font-bold">
                         Code<span className="text-[#097cc9]">Hack</span>
                       </h3>
             
               
             </div>
 
-            <p className="text-sm leading-relaxed">
+            <p className="font-ByteBounce text-2xl ">
               Building the next generation of developers
               through workshops, hackathons, and open source.
             </p>
@@ -37,56 +37,56 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white font-semibold mb-4">
+            <h3 className="text-white font-Xirod  ">
               Quick Links
             </h3>
-            <ul className="space-y-2 text-sm">
-              <li className="hover:text-emerald-400 cursor-pointer">About</li>
-              <li className="hover:text-emerald-400 cursor-pointer">Team</li>
-              <li className="hover:text-emerald-400 cursor-pointer">Events</li>
-              <li className="hover:text-emerald-400 cursor-pointer">Projects</li>
+            <ul className=" font-ByteBounce text-2xl">
+              <li className="hover:text-blue-600 cursor-pointer">About</li>
+              <li className="hover:text-blue-600 cursor-pointer">Team</li>
+              <li className="hover:text-blue-600 cursor-pointer">Events</li>
+              <li className="hover:text-blue-600 cursor-pointer">Projects</li>
             </ul>
           </div>
 
           {/* Resources */}
           <div>
-            <h3 className="text-white font-semibold mb-4">
+            <h3 className="text-white font-Xirod">
               Resources
             </h3>
-            <ul className="space-y-2 text-sm">
-              <li className="hover:text-emerald-400 cursor-pointer">Blog</li>
-              <li className="hover:text-emerald-400 cursor-pointer">Join Us</li>
-              <li className="hover:text-emerald-400 cursor-pointer">Contact</li>
+            <ul className="font-ByteBounce text-2xl">
+              <li className="hover:text-blue-600 cursor-pointer">Blog</li>
+              <li className="hover:text-blue-600 cursor-pointer">Join Us</li>
+              <li className="hover:text-blue-600 cursor-pointer">Contact</li>
             </ul>
           </div>
 
           {/* Connect */}
           <div>
-            <h3 className="text-white font-semibold mb-4">
+            <h3 className="text-white font-Xirod mb-4">
               Connect
             </h3>
             <div className="flex gap-4">
               <a
                 href="#"
-                className="bg-[#111827] p-3 rounded-lg hover:bg-emerald-500/20 transition"
+                className="bg-[#111827] p-3 rounded-lg hover:bg-blue-900/30 transition"
               >
                 <Github size={18} />
               </a>
               <a
                 href="#"
-                className="bg-[#111827] p-3 rounded-lg hover:bg-emerald-500/20 transition"
+                className="bg-[#111827] p-3 rounded-lg hover:bg-blue-900/30 transition"
               >
                 <Linkedin size={18} />
               </a>
               <a
                 href="#"
-                className="bg-[#111827] p-3 rounded-lg hover:bg-emerald-500/20 transition"
+                className="bg-[#111827] p-3 rounded-lg hover:bg-blue-900/30 transition"
               >
                 <Twitter size={18} />
               </a>
               <a
                 href="#"
-                className="bg-[#111827] p-3 rounded-lg hover:bg-emerald-500/20 transition"
+                className="bg-[#111827] p-3 rounded-lg hover:bg-blue-900/30 transition"
               >
                 <Mail size={18} />
               </a>
@@ -96,8 +96,8 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-white/10 mt-12 pt-6 text-center text-sm">
-          © 2026 CodeClub. Built with 💚 by the community.
+        <div className="border-t border-white/30 font-mono mt-12 pt-6 text-center text-sm">
+          © 2026 CodeClub. Built with Community 💗 by Amit Kumar & Suraj Kumar.
         </div>
 
       </div>

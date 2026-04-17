@@ -13,6 +13,8 @@ import Sneha from '../assets/image/Sneha_Kumari1.jpeg';
 import Nidhi from '../assets/image/Nidhi_Kumari.jpeg';
 import Pammi from '../assets/image/Pammi.jpeg';
 import Banti from '../assets/image/Banti_Kumar.jpeg';
+import Shalini from '../assets/image/Shalini.jpeg';
+
 
 
 export const coreMembers = [
@@ -36,6 +38,12 @@ export const coreMembers = [
     role: "Competitive Member",
     bio: "CSE 3rd Year - Active in competitive programming and problem solving.",
     image: Nirman,
+  },
+  {
+    name: "Shalini Pandey",
+    role: "Competitive Member",
+    bio: "EE 3rd Year - Active in competitive programming and Social management",
+    image: Shalini,
   },
   {
     name: "Md. Tufail",
