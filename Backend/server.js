@@ -68,7 +68,7 @@ app.use("/event/hackathon", hackathonRoute);
 
 app.use(express.static(path.join(_dirname, "/frontend/dist")));
 
-app.use('*', (req, res) => {
+app.use((req, res) => {
   res.sendFile(path.resolve(_dirname, "frontend", "dist", "index.html"));
 });
 
