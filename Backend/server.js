@@ -66,8 +66,8 @@ app.use("/event/debug-master", debugMasterRoute);
 app.use("/event/code-relay", codeRelayRoute);
 app.use("/event/hackathon", hackathonRoute);
 
+//  deployment path code
 app.use(express.static(path.join(_dirname, "/frontend/dist")));
-
 app.use((req, res) => {
   res.sendFile(path.resolve(_dirname, "frontend", "dist", "index.html"));
 });
