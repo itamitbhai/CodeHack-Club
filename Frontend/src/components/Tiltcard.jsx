@@ -21,6 +21,7 @@ const TiltCard = ({ children, className }) => {
     `;
   };
 
+  //tilt card
   const resetTilt = () => {
     cardRef.current.style.transform =
       "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
