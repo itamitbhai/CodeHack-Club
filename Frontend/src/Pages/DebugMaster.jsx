@@ -33,7 +33,9 @@ export default function DebugMaster() {
 
     try {
       
-      await axios.post("http://localhost:3000/event/debug-master", form);
+      // import.meta.env.VITE_API_URL का उपयोग करें
+await axios.post(`${import.meta.env.FRONTEND_URL}/event/debug-master`, form);
+
 
       alert("Registered Successfully 🚀");
 
